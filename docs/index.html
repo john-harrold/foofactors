@@ -22,6 +22,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -40,12 +42,6 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -75,31 +71,31 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<p><strong>NOTE: This is a toy package created for expository purposes, for the second edition of <a href="https://r-pkgs.org">R Packages</a>. It is not meant to actually be useful. If you want a package for factor handling, please see <a href="https://forcats.tidyverse.org">forcats</a>.</strong></p>
+<p><strong>NOTE: This is a toy package created for expository purposes, for the second edition of <a href="https://r-pkgs.org" class="external-link">R Packages</a>. It is not meant to actually be useful. If you want a package for factor handling, please see <a href="https://forcats.tidyverse.org" class="external-link">forcats</a>.</strong></p>
 <div id="foofactors" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#foofactors" class="anchor"></a>foofactors</h1></div>
+<a href="#foofactors" class="anchor" aria-hidden="true"></a>foofactors</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
 <p>Factors are a very useful type of variable in R, but they can also be very aggravating. This package provides some helper functions for the care and feeding of factors.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
 <p>You can install foofactors like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"jennybc/foofactors"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jennybc/foofactors"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="quick-demo" class="section level2">
 <h2 class="hasAnchor">
-<a href="#quick-demo" class="anchor"></a>Quick demo</h2>
+<a href="#quick-demo" class="anchor" aria-hidden="true"></a>Quick demo</h2>
 <p>Binding two factors via <code><a href="reference/fbind.html">fbind()</a></code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">foofactors</span><span class="op">)</span>
-<span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"character"</span>, <span class="st">"hits"</span>, <span class="st">"your"</span>, <span class="st">"eyeballs"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"but"</span>, <span class="st">"integer"</span>, <span class="st">"where it"</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">foofactors</span><span class="op">)</span>
+<span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"character"</span>, <span class="st">"hits"</span>, <span class="st">"your"</span>, <span class="st">"eyeballs"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"but"</span>, <span class="st">"integer"</span>, <span class="st">"where it"</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>Simply catenating two factors leads to a result that most don’t expect.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span>
 <span class="co">#&gt; [1] 1 3 4 2 1 3 4 2</span></code></pre></div>
 <p>The <code><a href="reference/fbind.html">fbind()</a></code> function glues two factors together and returns factor.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -107,11 +103,11 @@
 <span class="co">#&gt; [1] character hits      your      eyeballs  but       integer   where it </span>
 <span class="co">#&gt; [8] counts   </span>
 <span class="co">#&gt; Levels: but character counts eyeballs hits integer where it your</span></code></pre></div>
-<p>Often we want a table of frequencies for the levels of a factor. The base <code><a href="https://rdrr.io/r/base/table.html">table()</a></code> function returns an object of class <code>table</code>, which can be inconvenient for downstream work.</p>
+<p>Often we want a table of frequencies for the levels of a factor. The base <code><a href="https://rdrr.io/r/base/table.html" class="external-link">table()</a></code> function returns an object of class <code>table</code>, which can be inconvenient for downstream work.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span>
-<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span>
+<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
 <span class="co">#&gt; x</span>
 <span class="co">#&gt;  a  b  c  d  e </span>
 <span class="co">#&gt; 19 19 21 22 19</span></code></pre></div>
@@ -133,29 +129,35 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Jane Doe <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Jane Doe.</p>
+  <p></p>
+<p>Developed by Jane Doe.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -163,6 +165,8 @@
 
   
 
+
+  
 
   </body>
 </html>
