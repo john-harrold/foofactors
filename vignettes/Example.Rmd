@@ -1,0 +1,19 @@
+---
+title: "Example"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rhandsontable)
+```
+
+## Example
+
+The following inserts an `rhandsontable`
+
+```{r}
+data('mtcars')
+
+rhandsontable(mtcars)
+```
